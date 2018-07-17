@@ -3,6 +3,7 @@ public class Main {
     public static void main(String[] args) {
 
         TasksArrays tasksArrays = new TasksArrays();
+        TasksArrays2 tasksArrays2 = new TasksArrays2();
 
 //        tasksArrays.fill(new int[10],5);
 //
@@ -25,9 +26,13 @@ public class Main {
 //                                                {5,6,7,8},
 //                                                {9,0,1,2},
 //                                                {7,8,0,0}});
-        tasksArrays.transpose(new int[][]{{1,2,3,4},
-                                            {5,6,7,8},
-                                            {9,0,1,2}});
+//        tasksArrays.transpose(new int[][]{{1,2,3,4},
+//                                            {5,6,7,8},
+//                                            {9,0,1,2}});
+//        tasksArrays.isIdentity(new int[][]{	{1, 0, 0},
+//                                            {0, 1, 0},
+//                                            {0, 0, 1}	});
+        tasksArrays2.task7();
 
     }
 }

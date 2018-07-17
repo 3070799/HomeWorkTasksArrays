@@ -140,5 +140,7 @@ public class TasksArrays {
         }
         return transposeMatrix;
     }
+    //Task 10* (IdentityMatrixChecker)
+
 }
 
