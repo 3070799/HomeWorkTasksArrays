@@ -140,7 +140,30 @@ public class TasksArrays {
         }
         return transposeMatrix;
     }
+
     //Task 10* (IdentityMatrixChecker)
+    boolean isIdentity(int[][] matrix) {
+        boolean identity = true;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix.length != matrix[i].length) throw new IllegalArgumentException();
+
+                if (((i == j) && (matrix[i][j] == 1)) || ((i != j) && (matrix[i][j] == 0))) identity = true;
+
+                else identity = false;
+
+                if (identity == false) break;
+            }
+            if (identity == false) break;
+
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(Arrays.toString(matrix[i]));
+        }
+        System.out.println(identity);
+        return false;
+
+    }
 
 }
 
