@@ -9,7 +9,6 @@ public class TasksArraysLvl2 {
     //Пример работы:
     //findFrequentElem(new int[]{1, 2, 1, 0, 3}) == 1
     //findFrequentElem(new int[]{2, 1, 2, 1, 0, 3}) == 2
-
     int findFrequentElem(int[] array){
         int [] countQuantityElem = new int[array.length];
         int index = 0;
@@ -38,4 +37,28 @@ public class TasksArraysLvl2 {
         System.out.println(array[index]);
         return array[index];
     }
+
+    //Task 2** (CyclicShifter)
+    //Написать метод циклического сдвига массива на shiftPositions. Если shiftPositions - положительное, сдвиг вправо, иначе влево.
+    //void cyclicShift(int[] array, int shiftPositions)
+    //
+    //Пример работы:
+    //cyclicShift(new int[]{0, 1, 2, 3, 4}, 1). 	{4, 0, 1, 2, 3}
+    //cyclicShift(new int[]{0, 1, 2, 3, 4}, -1). 	{1, 2, 3, 4, 0}
+    //cyclicShift(new int[]{0, 1, 2, 3, 4}, 0). 	{0, 1, 2, 3, 4}
+    //cyclicShift(new int[]{0, 1, 2, 3, 4}, 5). 	{0, 1, 2, 3, 4}
+    void cyclicShift(int[] array, int shiftPositions){
+        int[] array1 = new int[array.length];
+        if (shiftPositions > 0){
+            for (int i = 0; i <array.length ; i++) {
+                array1[i] = array[(i + array.length -shiftPositions) % array.length];
+            }
+        }else{
+            for (int i = 0; i < array.length; i++) {
+                array1[i] = array[(i - shiftPositions) % array.length];
+            }
+        }
+        System.out.println(Arrays.toString(array1));
+    }
+    
 }
