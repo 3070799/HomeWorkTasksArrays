@@ -148,9 +148,7 @@ public class TasksArrays {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix.length != matrix[i].length) throw new IllegalArgumentException();
 
-                if (((i == j) && (matrix[i][j] == 1)) || ((i != j) && (matrix[i][j] == 0))) identity = true;
-
-                else identity = false;
+                identity = ((i == j) && (matrix[i][j] == 1)) || ((i != j) && (matrix[i][j] == 0)) ? true : false;
 
                 if (identity == false) break;
             }
