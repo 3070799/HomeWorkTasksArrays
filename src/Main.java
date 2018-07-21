@@ -8,7 +8,7 @@ public class Main {
         TasksArrays2 tasksArrays2 = new TasksArrays2();
         TasksArraysLvl2 tasksArraysLvl2 = new TasksArraysLvl2();
 
-        tasksArraysLvl2.createSpiral(sc.nextInt(),sc.nextInt());
+        tasksArraysLvl2.createPascalTriangle(20);
     }
 
 }

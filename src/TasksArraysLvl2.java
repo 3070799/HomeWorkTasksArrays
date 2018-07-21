@@ -138,4 +138,40 @@ public class TasksArraysLvl2 {
 
         return array;
     }
+
+    //Task 4** (PascalTriangleCreator)
+    //Написать метод создания треугольника Паскаля размера n+1. Если n < 0, бросить исключение IllegalArgumentException.
+    //Хитрые формулы использовать не нужно. Просто найдите закономерность в построении треугольника.
+    //https://ru.wikipedia.org/wiki/Треугольник_Паскаля
+    //int[][] createPascalTriangle(int n)
+    //
+    //Пример работы:
+    //createPascalTriangle(0) => {	{1}	}
+    //createPascalTriangle(3) => {	{1},
+    //					{1, 1},
+    //					{1, 2, 1},
+    //					{1, 3, 3, 1}	}
+    //createPascalTriangle(-1)  IllegalArgumentException
+    int[][] createPascalTriangle(int n){
+        int [][] matrixPasc = new int[n+1][];
+        if (n>=0) {
+            for (int i = 0; i < matrixPasc.length ; i++) {
+                matrixPasc[i] = new int[i+1];
+            }
+            for (int i = 0; i <matrixPasc.length ; i++) {
+                for (int j = 0; j <matrixPasc[i].length ; j++) {
+                    if(j==0) matrixPasc[i][j] = 1;
+                    else if(j==matrixPasc[i].length-1) matrixPasc[i][j] = 1;
+                    else {
+                        matrixPasc[i][j] = matrixPasc[i-1][j-1] + matrixPasc[i-1][j];
+                    }
+                }
+            }
+        }else throw new IllegalArgumentException("IllegalArgumentException");
+        for (int i = 0; i <matrixPasc.length ; i++) {
+            System.out.println(Arrays.toString(matrixPasc[i]));
+        }
+        return matrixPasc;
+    }
+
 }
